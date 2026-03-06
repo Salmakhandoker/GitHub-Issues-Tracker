@@ -41,6 +41,15 @@
 </div>
 
 </nav>
+
+<!-- TABS -->
+<div class="tabs">
+
+<button id="allBtn" onclick="loadIssues()">All</button>
+<button id="openBtn" onclick="filterIssues('open')">Open</button>
+<button id="closedBtn" onclick="filterIssues('closed')">Closed</button>
+
+</div>
 <div class="issues-header">
 
     <div class="left-header">
@@ -59,14 +68,7 @@
     </div>
 
 
-<!-- TABS -->
-<div class="tabs">
 
-<button id="allBtn" onclick="loadIssues()">All</button>
-<button id="openBtn" onclick="filterIssues('open')">Open</button>
-<button id="closedBtn" onclick="filterIssues('closed')">Closed</button>
-
-</div>
 
 
 <!-- LOADER -->
