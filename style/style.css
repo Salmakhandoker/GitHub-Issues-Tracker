@@ -69,13 +69,9 @@ gap:20px;
 padding:20px;
 }
 
-/* CARD */
 
-.issue-card{
-background:white;
-padding:15px;
-border-radius:8px;
-}
+
+
 
 /* LOADER */
 
@@ -123,3 +119,180 @@ grid-template-columns:1fr;
 }
 
 }
+.issues-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+padding:20px;
+border-radius:10px;
+margin:20px;
+box-shadow:0 2px 8px rgba(0,0,0,0.05);
+}
+
+.left-header{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.issue-icon{
+width:40px;
+height:40px;
+background:#6c5ce7;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:18px;
+}
+
+.left-header h3{
+margin:0;
+}
+
+.left-header p{
+margin:0;
+font-size:12px;
+color:gray;
+}
+
+.right-header{
+display:flex;
+gap:15px;
+font-size:14px;
+align-items:center;
+}
+
+.open-dot{
+width:10px;
+height:10px;
+background:#00b894;
+border-radius:50%;
+display:inline-block;
+margin-right:4px;
+}
+
+.closed-dot{
+width:10px;
+height:10px;
+background:#a55eea;
+border-radius:50%;
+display:inline-block;
+margin-right:4px;
+}
+
+/* 2nd issues */
+.issue-card{
+background:white;
+padding:18px;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+transition:0.2s;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.issue-card:hover{
+transform:translateY(-3px);
+}
+
+/* TOP SECTION */
+
+.card-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.status-icon{
+width:18px;
+height:18px;
+border-radius:50%;
+background:#2ecc71;
+}
+
+/* TITLE */
+
+.title{
+font-size:16px;
+font-weight:600;
+margin:5px 0;
+}
+
+/* DESCRIPTION */
+
+.desc{
+font-size:13px;
+color:#777;
+line-height:1.4;
+}
+
+/* PRIORITY BADGES */
+
+.priority{
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:600;
+}
+
+.priority.high{
+background:#ffe5e5;
+color:#ff3b3b;
+}
+
+.priority.medium{
+background:#fff2cc;
+color:#d68910;
+}
+
+.priority.low{
+background:#e8e8e8;
+color:#888;
+}
+
+/* LABELS */
+
+.labels{
+display:flex;
+gap:8px;
+margin-top:6px;
+}
+
+.labels span{
+font-size:11px;
+padding:4px 8px;
+border-radius:10px;
+font-weight:600;
+}
+
+.bug{
+background:#ffe5e5;
+color:#e74c3c;
+}
+
+.help{
+background:#fff4cc;
+color:#f39c12;
+}
+
+/* FOOTER */
+
+.card-footer{
+display:flex;
+justify-content:space-between;
+font-size:11px;
+color:#999;
+margin-top:10px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:20px;
+}
+

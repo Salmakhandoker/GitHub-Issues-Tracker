@@ -6,6 +6,7 @@ const mainPage = document.getElementById("mainPage")
 const container = document.getElementById("issuesContainer")
 const loader = document.getElementById("loader")
 
+
 let allIssues = []
 
 
@@ -71,25 +72,25 @@ card.style.borderTop = "6px solid purple"
 
 card.innerHTML = `
 
-<h3>${issue.title}</h3>
+<div class="card-top">
+    <span class="status-icon"></span>
+    <span class="priority ${issue.priority.toLowerCase()}">${issue.priority}</span>
+</div>
 
-<p>${issue.description}</p>
+<h3 class="title">${issue.title}</h3>
 
-<p><b>Status:</b> ${issue.status}</p>
+<p class="desc">${issue.description}</p>
 
-<p><b>Category:</b> ${issue.category}</p>
+<div class="labels">
+    <span class="bug">BUG</span>
+    <span class="help">HELP WANTED</span>
+</div>
 
-<p><b>Author:</b> ${issue.author}</p>
-
-<p><b>Priority:</b> ${issue.priority}</p>
-
-<p><b>Label:</b> ${issue.label}</p>
-
-<p><b>Created:</b> ${issue.createdAt}</p>
-
-<button onclick="openModal(${issue.id})">Details</button>
-
-`
+<div class="card-footer">
+    <span>#${issue.id} by ${issue.author}</span>
+    <span>${issue.createdAt}</span>
+</div>
+    `
 
 container.appendChild(card)
 
@@ -100,33 +101,59 @@ container.appendChild(card)
 
 /* FILTER */
 
+
 function filterIssues(status){
 
 const filtered = allIssues.filter(issue => issue.status === status)
 
 displayIssues(filtered)
 
+
+}
+if(issue.status === "open"){
+card.style.borderTop = "4px solid #00b894"
+}else{
+card.style.borderTop = "4px solid #a55eea"
 }
 
 
 /* SEARCH */
 
-async function searchIssue(){
+// async function searchIssue(){
 
-const text = document.getElementById("searchInput").value
+// const text = document.getElementById("searchInput").value
+
+// showLoader()
+
+// const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`)
+
+// const data = await res.json()
+
+// displayIssues(data.data)
+
+// hideLoader()
+
+// }
+document.getElementById("issueCount").innerText = allIssues.length + " Issues"
+
+
+
+async function loadIssues(){
 
 showLoader()
 
-const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`)
+const res = await fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
 
 const data = await res.json()
 
-displayIssues(data.data)
+allIssues = data.data
+
+document.getElementById("issueCount").innerText = allIssues.length + " Issues"
+
+displayIssues(allIssues)
 
 hideLoader()
-
 }
-
 
 /* MODAL */
 
