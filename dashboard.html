@@ -1,0 +1,64 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Issues Dashboard</title>
+<link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<h2>Issues Tracker</h2>
+
+<div class="search-box">
+
+<input type="text" id="searchInput" placeholder="Search issues">
+
+<button onclick="searchIssues()">Search</button>
+
+</div>
+
+</nav>
+
+<!-- Tabs -->
+
+<div class="tabs">
+
+<button onclick="loadIssues('all')" id="allBtn">All</button>
+
+<button onclick="loadIssues('open')" id="openBtn">Open</button>
+
+<button onclick="loadIssues('closed')" id="closedBtn">Closed</button>
+
+</div>
+
+<!-- Loader -->
+
+<div id="loader">Loading...</div>
+
+<!-- Issues container -->
+
+<div id="issuesContainer" class="grid"></div>
+
+
+<!-- Modal -->
+
+<div id="issueModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">X</span>
+
+<div id="modalBody"></div>
+
+</div>
+
+</div>
+
+<script src="script/app.js"></script>
+
+</body>
+</html>

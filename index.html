@@ -7,95 +7,28 @@
     <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
+    <body>
 
-    <!-- LOGIN PAGE -->
-<div id="loginPage" class="login-container">
+<div class="login-container">
 
 <h1>GitHub Issues Tracker</h1>
-<p>Sign in to manage your issues</p>
+<p>Manage issues easily</p>
 
-<input id="username" placeholder="Username">
-<input id="password" type="password" placeholder="Password">
+<input type="text" id="username" placeholder="Username">
+
+<input type="password" id="password" placeholder="Password">
 
 <button onclick="login()">Sign In</button>
-<h4>OR</h4>
 
-<p class="demo">Demo Credentials:</p>
-<p>Username: admin</p>
-
-<p>Password: admin123</p>
-
-</div>
-
-
-<!-- MAIN PAGE -->
-<div id="mainPage" class="hidden">
-
-<!-- NAVBAR -->
-<nav class="navbar">
-<h2>GitHub Issues Tracker</h2>
-
-<div>
-<input id="searchInput" placeholder="Search issues">
-<button onclick="SearchIssue()">+ New Issue</button>
-</div>
-
-</nav>
-
-<!-- TABS -->
-<div class="tabs">
-
-<button id="allBtn" onclick="loadIssues()">All</button>
-<button id="openBtn" onclick="filterIssues('open')">Open</button>
-<button id="closedBtn" onclick="filterIssues('closed')">Closed</button>
-
-</div>
-<div class="issues-header">
-
-    <div class="left-header">
-        <div class="issue-icon">⚙</div>
-
-        <div>
-            <h3 id="issueCount">0 Issues</h3>
-            <p>Track and manage your project issues</p>
-        </div>
-    </div>
-
-    <div class="right-header">
-        <span class="open-dot"></span> Open
-        <span class="closed-dot"></span> Closed
-    </div>
-    </div>
-
-
-
-
-
-<!-- LOADER -->
-<div id="loader" class="loader hidden">Loading...</div>
-
-
-<!-- ISSUE GRID -->
-<div id="issuesContainer" class="grid"></div>
+<p class="demo">
+Demo Credentials<br>
+Username: admin<br>
+Password: admin123
+</p>
 
 </div>
 
+<script src="script/login.js"></script>
 
-<!-- MODAL -->
-<div id="modal" class="modal hidden">
-
-<div class="modal-content">
-
-<span class="close" onclick="closeModal()">X</span>
-
-<div id="modalBody"></div>
-
-</div>
-
-</div>
-
-   
-  <script src="script/script.js"></script>
-  
 </body>
 </html>
