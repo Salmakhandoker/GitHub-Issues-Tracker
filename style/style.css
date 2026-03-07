@@ -7,6 +7,24 @@ background:#f4f4f4;
 }
 
 /* login */
+.logo{
+  text-align:center;
+}
+
+.logo-circle{
+  width:80px;
+  height:80px;
+  background: #f4f4f4;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 10px;
+}
+
+.logo-circle img{
+  width:40px;
+}
 
 .login-container{
 width:300px;
@@ -37,15 +55,32 @@ color:gray;
 }
 
 /* navbar */
-
+/* .navbar{
+  padding:15px 40px;
+  border-bottom:1px solid #ddd;
+} */
 .navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-background: white;
-color: black;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  border-bottom:1px solid #ddd;
 }
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.nav-left img{
+  width:30px;
+}
+
+.nav-left h2{
+  font-size:20px;
+  font-weight:600;
+}
+
 
 .search-box input{
 padding:8px;
@@ -54,14 +89,63 @@ padding:8px;
 .search-box button{
 padding:8px;
 }
-
-/* tabs */
-
-.tabs{
-text-align:center;
-margin:20px;
+/* card header */
+.card-header{
+  display:flex;
+  justify-content:space-between;
+  /* align-items:center; */
+  background:#fff;
+  padding:20px;
+  border-radius:8px;
+  margin:20px 40px;
 }
 
+.left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.icon{
+  background:#e9e2ff;
+  padding:10px;
+  border-radius:50%;
+}
+
+.right{
+  font-size:14px;
+}
+
+.open{
+  width:10px;
+  height:10px;
+  background:green;
+  display:inline-block;
+  border-radius:50%;
+  margin-right:5px;
+}
+
+.closed{
+  width:10px;
+  height:10px;
+  background:purple;
+  display:inline-block;
+  border-radius:50%;
+  margin:0 5px 0 15px;
+}
+/* tabs */
+
+/* .tabs{
+text-align:center;
+margin:20px;
+} */
+
+.tabs{
+  display:flex;
+  justify-content:flex-start; /* left side */
+  gap:10px;
+  margin:20px;
+}
 .tabs button{
 padding:10px 20px;
 margin:5px;

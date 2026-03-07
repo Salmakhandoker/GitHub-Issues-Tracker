@@ -10,8 +10,10 @@
 <body>
 
 <nav class="navbar">
+    <div class="nav-left">
+    <img src="assets/github-logo.png" alt="">
 
-<h2>Issues Tracker</h2>
+  <h2>Issues Tracker</h2>
 
 <div class="search-box">
 
@@ -23,6 +25,8 @@
 
 </nav>
 
+
+
 <!-- Tabs -->
 
 <div class="tabs">
@@ -32,6 +36,24 @@
 <button onclick="loadIssues('open')" id="openBtn">Open</button>
 
 <button onclick="loadIssues('closed')" id="closedBtn">Closed</button>
+
+</div>
+
+<div class="card-header">
+
+  <div class="left">
+    <div class="icon">⚙️</div>
+
+    <div>
+      <h3>50 Issues</h3>
+      <p>Track and manage your project issues</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <span class="open"></span> Open
+    <span class="closed"></span> Closed
+  </div>
 
 </div>
 
