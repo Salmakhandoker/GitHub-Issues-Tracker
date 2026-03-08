@@ -9,18 +9,19 @@ window.location.href="index.html"
 
 loadIssues()
 
-}
+};
 
 
 async function loadIssues(type="all"){
 
 document.getElementById("loader").style.display="block"
 
-const res = await fetch(api)
+const res = await fetch(api);
 
-const data = await res.json()
+const data = await res.json();
 
-let issues = data.data
+let issues = data.data;
+
 
 if(type==="open"){
 issues = issues.filter(i=>i.status==="open")
@@ -30,16 +31,25 @@ if(type==="closed"){
 issues = issues.filter(i=>i.status==="closed")
 }
 
-displayIssues(issues)
+displayIssues(issues);
 
 document.getElementById("loader").style.display="none"
 
-}
+};
+const buttons = document.querySelectorAll(".tabs button");
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+  });
+});
 
 
 function displayIssues(issues){
 
-const container = document.getElementById("issuesContainer")
+const container = document.getElementById("issuesContainer");
 
 container.innerHTML=""
 
@@ -73,7 +83,7 @@ container.innerHTML +=`
 
 })
 
-}
+};
 
 
 
@@ -81,9 +91,9 @@ async function showIssue(id){
 
 const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`)
 
-const data = await res.json()
+const data = await res.json();
 
-const issue = data.data
+const issue = data.data;
 
 document.getElementById("modalBody").innerHTML=`
 
@@ -107,7 +117,7 @@ document.getElementById("modalBody").innerHTML=`
 
 document.getElementById("issueModal").style.display="block"
 
-}
+};
 
 
 function closeModal(){
@@ -123,8 +133,8 @@ const text = document.getElementById("searchInput").value
 
 const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`)
 
-const data = await res.json()
+const data = await res.json();
 
-displayIssues(data.data)
+displayIssues(data.data);
 
-}
+};
